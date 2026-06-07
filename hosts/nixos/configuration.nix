@@ -91,12 +91,15 @@
     isNormalUser = true;
     description = "Yukihiro Arakawa";
     extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
     # packages = with pkgs; [
     #  tree
     # ];
   };
 
   # programs.firefox.enable = true;
+
+  programs.fish.enable = true;
 
   programs.vim = {
     enable = true;
