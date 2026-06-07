@@ -26,7 +26,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.yukihiro = import ./home/yukihiro.nix;
+            home-manager.users.yukihiro = import ./home/user;
           }
         ];
       };

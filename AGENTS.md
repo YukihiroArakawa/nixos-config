@@ -6,13 +6,14 @@ This repository contains a NixOS flake configuration.
 
 - `flake.nix`: flake inputs and NixOS/Home Manager wiring
 - `hosts/nixos/configuration.nix`: system-level NixOS configuration
-- `home/yukihiro.nix`: user-level Home Manager configuration for `yukihiro`
+- `home/user/default.nix`: user-level Home Manager entrypoint for `yukihiro`
+- `home/user/*.nix`: user-level Home Manager modules grouped by tool
 - `hosts/nixos/hardware-configuration.nix`: generated hardware configuration
 
 ## Working Rules
 
 - Keep system-wide settings in `hosts/nixos/configuration.nix`.
-- Keep user preferences, shell setup, editor keymaps, and dotfile-like settings in `home/yukihiro.nix`.
+- Keep user preferences, shell setup, editor keymaps, and dotfile-like settings in `home/user/`.
 - Do not edit `hosts/nixos/hardware-configuration.nix` unless the request is explicitly hardware-related.
 - Keep changes small and focused.
 - Do not run `nixos-rebuild switch` unless the user explicitly asks for applying the configuration.
