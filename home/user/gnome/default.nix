@@ -33,6 +33,15 @@
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 5;
     };
+
+    # Use natural scrolling for both touchpad and mouse.
+    "org/gnome/desktop/peripherals/touchpad" = {
+      natural-scroll = true;
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      natural-scroll = true;
+    };
   };
 
   # Copy as a writable file so GNOME Display Settings can update it.
