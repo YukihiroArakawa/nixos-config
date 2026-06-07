@@ -25,14 +25,12 @@ $ sudo nixos-rebuild switch --flake .#nixos
 ```
 
 ## todo
+
+- git clone without typing password. 
 - neovim
     - tab size
     - lazygit
     - remap jj to Esc
-- terminal
-    - alacritty
-- tmux
-    - copy from terminal
 - browser(zen, brave, chrome)
 - agents
     - deny rules
