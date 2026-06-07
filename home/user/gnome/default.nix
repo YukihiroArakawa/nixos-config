@@ -4,6 +4,11 @@
   dconf.settings = {
     # Use Super+number for workspace switching.
     "org/gnome/desktop/wm/keybindings" = {
+      # Let fcitx5 handle input method switching instead of GNOME.
+      switch-input-source = [];
+      switch-input-source-backward = [];
+      activate-window-menu = [];
+
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];

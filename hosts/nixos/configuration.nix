@@ -48,6 +48,9 @@
         fcitx5-mozc
         fcitx5-gtk
     ];
+    fcitx5.settings.globalOptions = {
+      "Hotkey/TriggerKeys"."0" = "Alt+space";
+    };
   };
 
   # Enable the X11 windowing system.
