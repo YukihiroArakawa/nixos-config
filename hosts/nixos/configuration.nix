@@ -24,6 +24,8 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
