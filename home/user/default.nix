@@ -5,6 +5,7 @@
     ./alacritty
     ./fish
     ./git
+    ./gnome
     ./packages.nix
     ./tmux
     ./vim
