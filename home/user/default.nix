@@ -6,6 +6,7 @@
     ./fish
     ./git
     ./packages.nix
+    ./tmux
     ./vim
   ];
 
