@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty
+    ./browser
     ./fish
     ./git
     ./gnome
