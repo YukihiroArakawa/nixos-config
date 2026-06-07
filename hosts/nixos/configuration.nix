@@ -102,13 +102,6 @@
 
   # programs.firefox.enable = true;
 
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
-    ];
-  };
-
   programs.fish.enable = true;
 
   programs.vim = {
