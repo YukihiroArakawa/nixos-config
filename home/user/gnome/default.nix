@@ -37,10 +37,12 @@
     # Use natural scrolling for both touchpad and mouse.
     "org/gnome/desktop/peripherals/touchpad" = {
       natural-scroll = true;
+      speed = 0.8;
     };
 
     "org/gnome/desktop/peripherals/mouse" = {
       natural-scroll = true;
+      speed = 0.8;
     };
   };
 
