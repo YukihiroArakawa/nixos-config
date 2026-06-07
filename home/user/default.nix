@@ -3,10 +3,10 @@
 {
   imports = [
     ./alacritty
-    ./fish.nix
-    ./git.nix
+    ./fish
+    ./git
     ./packages.nix
-    ./vim.nix
+    ./vim
   ];
 
   home.username = "yukihiro";
