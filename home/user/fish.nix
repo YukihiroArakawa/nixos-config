@@ -8,6 +8,7 @@
       # git abbr
       gs = "git status";
       gpoh = "git push origin HEAD";
+      lg = "lazygit";
     };
     interactiveShellInit = ''
       set fish_greeting
