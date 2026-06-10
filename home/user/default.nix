@@ -4,6 +4,7 @@
   imports = [
     ./alacritty
     ./browser
+    ./agents
     ./fish
     ./git
     ./gnome
