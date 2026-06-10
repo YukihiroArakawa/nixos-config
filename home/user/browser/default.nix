@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.brave
-  ];
+  programs.brave = {
+    enable = true;
+
+    extensions = [
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # Vimium
+    ];
+  };
 
   programs.firefox = {
     enable = true;
