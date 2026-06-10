@@ -37,3 +37,5 @@ $ sudo nixos-rebuild switch --flake .#nixos
     - skills 
         - convesational commit 
 - fingerprint login
+- nix
+    - compaction setting
