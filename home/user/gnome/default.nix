@@ -25,6 +25,18 @@
       switch-to-application-5 = [];
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ulauncher/"
+      ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ulauncher" = {
+      name = "Ulauncher";
+      command = "${pkgs.ulauncher}/bin/ulauncher-toggle";
+      binding = "<Super>space";
+    };
+
     # Keep a stable set of numbered workspaces.
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
@@ -51,4 +63,7 @@
   home.activation.copyGnomeMonitorsXml = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     $DRY_RUN_CMD install -D -m 0644 ${./monitors.xml} ${config.xdg.configHome}/monitors.xml
   '';
+
+  xdg.configFile."autostart/ulauncher.desktop".source =
+    "${pkgs.ulauncher}/share/applications/ulauncher.desktop";
 }

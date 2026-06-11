@@ -7,6 +7,7 @@
     lazygit
     nerd-fonts.jetbrains-mono
     tree
+    ulauncher
     vial
   ];
 }
