@@ -23,6 +23,7 @@
       switch-to-application-3 = [];
       switch-to-application-4 = [];
       switch-to-application-5 = [];
+      toggle-overview = [ "<Control>Up" "<Control>Down" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
