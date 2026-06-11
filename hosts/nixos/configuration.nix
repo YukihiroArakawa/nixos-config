@@ -91,16 +91,22 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
+  services.udev.packages = [
+    pkgs.qmk-udev-rules
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yukihiro = {
     isNormalUser = true;
     description = "Yukihiro Arakawa";
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "networkmanager" "plugdev" "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     # packages = with pkgs; [
     #  tree
     # ];
   };
+
+  users.groups.plugdev = {};
 
   # programs.firefox.enable = true;
 
