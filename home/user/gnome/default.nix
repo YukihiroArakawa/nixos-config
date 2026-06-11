@@ -28,6 +28,7 @@
     # Keep a stable set of numbered workspaces.
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
+      overlay-key = "";
     };
 
     "org/gnome/desktop/wm/preferences" = {
