@@ -27,15 +27,8 @@ $ sudo nixos-rebuild switch --flake .#nixos
 ## todo
 
 - git clone without typing password. 
-- neovim
-    - lazyvim
-    - tab size
-    - remap jj to Esc
-- browser(zen, brave, chrome)
 - agents
     - deny rules
-    - skills 
-        - convesational commit 
 - fingerprint login
 - nix
     - compaction setting
