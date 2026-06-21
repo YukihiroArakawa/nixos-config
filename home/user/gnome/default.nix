@@ -1,7 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    gnomeExtensions.no-titlebar-when-maximized
+  ];
+
   dconf.settings = {
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "no-titlebar-when-maximized@alec.ninja"
+      ];
+    };
+
     # Use Super+number for workspace switching.
     "org/gnome/desktop/wm/keybindings" = {
       # Let fcitx5 handle input method switching instead of GNOME.

@@ -2,6 +2,9 @@
 program = "bash"
 args = ["-lc", "exec \"${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux_setup.sh\""]
 
+[window]
+decorations = "None"
+
 [window.padding]
 x = 8
 y = 8
