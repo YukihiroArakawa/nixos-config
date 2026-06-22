@@ -11,7 +11,7 @@ let
       repo="$(git rev-parse --show-toplevel)"
       cd "$repo"
 
-      codex -C "$repo" "\$commit
+      codex --ask-for-approval never exec -C "$repo" "\$commit
 
 Commit only the currently staged changes. If nothing is staged, inspect the worktree and ask before staging anything."
     '';
@@ -30,7 +30,7 @@ in
           context: 'global'
           description: 'AI commit with Codex'
           command: 'codex-commit-skill'
-          output: terminal
+          loadingText: 'Committing with Codex'
     '';
   };
 }
