@@ -32,3 +32,16 @@ $ sudo nixos-rebuild switch --flake .#nixos
 - fingerprint login
 - nix
     - compaction setting
+- nvim
+    - lsp
+    - completion
+    - formatting
+    - linting
+    - treesitter
+    - diagnostics list
+    - git signs
+    - comments
+    - autopairs
+    - bufferline/statusline
+- lazygit
+    - ai commit
