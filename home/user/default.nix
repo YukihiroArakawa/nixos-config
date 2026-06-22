@@ -8,6 +8,7 @@
     ./fish
     ./git
     ./gnome
+    ./lazygit
     ./packages.nix
     ./tmux
     ./vim

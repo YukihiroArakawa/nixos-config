@@ -43,5 +43,3 @@ $ sudo nixos-rebuild switch --flake .#nixos
     - comments
     - autopairs
     - bufferline/statusline
-- lazygit
-    - ai commit
