@@ -26,7 +26,6 @@ $ sudo nixos-rebuild switch --flake .#nixos
 
 ## todo
 
-- git clone without typing password. 
 - agents
     - deny rules
 - fingerprint login
@@ -37,9 +36,7 @@ $ sudo nixos-rebuild switch --flake .#nixos
     - completion
     - formatting
     - linting
-    - treesitter
     - diagnostics list
     - git signs
     - comments
     - autopairs
-    - bufferline/statusline
