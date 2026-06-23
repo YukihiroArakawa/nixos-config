@@ -19,6 +19,7 @@ return {
         timeout = 3000,
       },
       picker = { enabled = true },
+      terminal = { enabled = true },
     },
     keys = {
       {
@@ -48,6 +49,22 @@ return {
           Snacks.picker.grep({ cwd = project_root() })
         end,
         desc = "Grep",
+      },
+      {
+        "<C-/>",
+        function()
+          Snacks.terminal(nil, { cwd = project_root() })
+        end,
+        desc = "Toggle Terminal",
+        mode = { "n", "t" },
+      },
+      {
+        "<C-_>",
+        function()
+          Snacks.terminal(nil, { cwd = project_root() })
+        end,
+        desc = "which_key_ignore",
+        mode = { "n", "t" },
       },
     },
   },
