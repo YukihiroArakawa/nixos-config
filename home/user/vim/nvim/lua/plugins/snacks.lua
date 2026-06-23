@@ -61,4 +61,27 @@ return {
     lazy = true,
     opts = {},
   },
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = true,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Previous buffer" },
+      { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
+    },
+    opts = {
+      options = {
+        diagnostics = "nvim_lsp",
+        separator_style = "thin",
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+      },
+    },
+  },
 }
