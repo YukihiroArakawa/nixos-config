@@ -116,4 +116,24 @@ return {
       },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      local treesitter = require("nvim-treesitter")
+      treesitter.setup()
+      treesitter.install({ "lua", "nix" })
+
+      -- nvim-treesitter main uses Neovim's built-in highlighter API instead of the old configs module.
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "lua", "nix" },
+        callback = function()
+          pcall(vim.treesitter.start)
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+    end,
+  },
 }
