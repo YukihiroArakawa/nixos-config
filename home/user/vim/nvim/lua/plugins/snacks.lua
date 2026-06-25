@@ -18,7 +18,13 @@ return {
         enabled = true,
         timeout = 3000,
       },
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        sources = {
+          explorer = { hidden = true },
+          files = { hidden = true },
+        },
+      },
       terminal = { enabled = true },
     },
     keys = {
