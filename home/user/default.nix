@@ -9,6 +9,7 @@
     ./git
     ./gnome
     ./lazygit
+    ./mozc
     ./packages.nix
     ./tmux
     ./vim
