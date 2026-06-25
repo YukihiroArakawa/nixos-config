@@ -14,4 +14,9 @@
       set fish_greeting
     '';
   };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }
