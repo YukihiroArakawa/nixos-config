@@ -26,6 +26,9 @@ $ sudo nixos-rebuild switch --flake .#nixos
 
 ## todo
 
+- nix os
+    - separation of nixos configuration and dotfiles.
+    - for using mac os and nix os.
 - agents
     - deny rules
 - fingerprint login
