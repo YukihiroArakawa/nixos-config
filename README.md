@@ -29,8 +29,6 @@ $ sudo nixos-rebuild switch --flake .#nixos
 - agents
     - deny rules
 - fingerprint login
-- nix
-    - compaction setting
 - nvim
     - lsp
     - completion
