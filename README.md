@@ -40,3 +40,6 @@ $ sudo nixos-rebuild switch --flake .#nixos
     - git signs
     - comments
     - autopairs
+- ulauncher
+    - app focus if the app is opended
+
