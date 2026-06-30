@@ -19,9 +19,14 @@
       nil
       nodejs
       ripgrep
+      # Keep language servers on PATH so Neovim can use them without an extra installer layer.
+      svelte-language-server
       stylua
       tree-sitter
+      typescript
+      typescript-language-server
       unzip
+      vscode-langservers-extracted
       wget
     ];
   };
