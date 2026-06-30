@@ -3,11 +3,16 @@
 set -euo pipefail
 
 session_name="default"
-workspace="$HOME/Workspace/nixos-config"
+workspace="$HOME/Workspace"
 
 if ! tmux has-session -t "$session_name" 2>/dev/null; then
-  tmux new-session -d -s "$session_name" -c "$workspace"
-  tmux split-window -h -t "$session_name:0" -c "$workspace"
+  tmux new-session -d -s "$session_name" -n "os-conf" -c "$workspace/nixos-config"
+  tmux split-window -h -p 30 -t "$session_name:0" -c "$workspace/nixos-config"
+  tmux send-keys -t "$session_name:0.0" "nvim ." C-m
+
+  tmux new-window -t "$session_name:1" -n "blogs" -c "$workspace/yukiotechblog"
+
+  tmux select-window -t "$session_name:0"
 fi
 
 exec tmux attach-session -t "$session_name"
