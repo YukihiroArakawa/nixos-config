@@ -39,3 +39,4 @@ sudo nixos-rebuild switch --flake .#nixos
 - Use Home Manager for per-user configuration.
 - Use NixOS modules for OS services, users, packages, boot, networking, and login shells.
 - Keep comments sparse and only add them when they clarify a non-obvious choice.
+- When adding code comments, explain why the code exists or why a choice was made, not just what the code does.
