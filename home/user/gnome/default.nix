@@ -12,6 +12,11 @@
       ];
     };
 
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+    };
+
     # Use Super+number for workspace switching.
     "org/gnome/desktop/wm/keybindings" = {
       # Let fcitx5 handle input method switching instead of GNOME.
