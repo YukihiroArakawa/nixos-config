@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   skillsDir = ./skills;
@@ -16,7 +16,7 @@ let
 in
 {
   home.packages = [
-    pkgs-unstable.codex
+    pkgs.codex
   ];
 
   home.file = skillFiles "codex" // skillFiles "claude";
