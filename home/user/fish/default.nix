@@ -5,6 +5,8 @@
     enable = true;
     shellAbbrs = {
       nrs = "sudo nixos-rebuild switch --flake .#nixos";
+      # Run after changing home/user; system-level changes still need nrs.
+      hms = "home-manager switch --flake .#yukihiro";
       # git abbr
       gs = "git status";
       gpoh = "git push origin HEAD";

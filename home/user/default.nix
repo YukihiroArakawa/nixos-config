@@ -18,5 +18,7 @@
   home.username = "yukihiro";
   home.homeDirectory = "/home/yukihiro";
 
+  programs.home-manager.enable = true;
+
   home.stateVersion = "26.05";
 }

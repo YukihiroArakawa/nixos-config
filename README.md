@@ -18,11 +18,26 @@ $ cd nixos-config
 nix.settings.experimental-features = [ "nix-command" "flakes"]; 
 ```
 
-### 2. apply nixos configuration.
+### 2. Apply the NixOS configuration.
 
 ```terminal
 $ sudo nixos-rebuild switch --flake .#nixos
 ```
+
+### 3. Initialize Home Manager.
+
+Run this once as `yukihiro` to apply the user configuration and install the
+`home-manager` command.
+
+```terminal
+$ nix build .#homeConfigurations.yukihiro.activationPackage --out-link /tmp/home-manager-yukihiro
+$ /tmp/home-manager-yukihiro/activate
+```
+
+## Updating configuration
+
+- After changing files under `home/user/`, run `hms` (`home-manager switch --flake .#yukihiro`).
+- After changing system-level NixOS configuration, run `nrs` (`sudo nixos-rebuild switch --flake .#nixos`).
 
 ## todo
 
@@ -39,4 +54,3 @@ $ sudo nixos-rebuild switch --flake .#nixos
     - autopairs
 - ulauncher
     - app focus if the app is opended
-

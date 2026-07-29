@@ -4,6 +4,7 @@
   programs.vim = {
     enable = true;
     extraConfig = ''
+      set expandtab shiftwidth=2 tabstop=2 softtabstop=2
       inoremap jj <Esc>
     '';
   };
