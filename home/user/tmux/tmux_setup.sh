@@ -12,6 +12,8 @@ if ! tmux has-session -t "$session_name" 2>/dev/null; then
 
   tmux new-window -t "$session_name:1" -n "blogs" -c "$workspace/yukiotechblog"
 
+  tmux new-window -t "$session_name:2" -n "blind75" -c "$workspace/blind75"
+
   tmux select-window -t "$session_name:0"
 fi
 
