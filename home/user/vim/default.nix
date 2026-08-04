@@ -19,6 +19,7 @@
       lua-language-server
       nil
       nodejs
+      csharp-ls
       ripgrep
       # Keep language servers on PATH so Neovim can use them without an extra installer layer.
       svelte-language-server

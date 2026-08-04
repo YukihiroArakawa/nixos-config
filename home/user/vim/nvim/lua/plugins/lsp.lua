@@ -38,8 +38,13 @@ return {
         capabilities = capabilities,
       })
 
+      vim.lsp.config("csharp_ls", {
+        capabilities = capabilities,
+      })
+
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("svelte")
+      vim.lsp.enable("csharp_ls")
     end,
   },
   {
