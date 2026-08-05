@@ -40,6 +40,13 @@ return {
 
       vim.lsp.config("csharp_ls", {
         capabilities = capabilities,
+        root_dir = function(bufnr, on_dir)
+          local filename = vim.api.nvim_buf_get_name(bufnr)
+          local project_root = vim.fs.root(filename, function(name)
+            return vim.tbl_contains({ "sln", "slnx", "csproj" }, vim.fs.ext(name))
+          end)
+          on_dir(project_root or vim.fs.dirname(filename))
+        end,
       })
 
       vim.lsp.enable("ts_ls")
