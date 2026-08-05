@@ -11,6 +11,7 @@
       gs = "git status";
       gpoh = "git push origin HEAD";
       lg = "lazygit";
+      tmuxev = "tmux select-layout even-vertical";
     };
     interactiveShellInit = ''
       set fish_greeting
