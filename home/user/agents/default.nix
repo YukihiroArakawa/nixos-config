@@ -13,7 +13,7 @@ let
     name = "codex-permission-notify";
     runtimeInputs = [ pkgs.pipewire ];
     text = ''
-      pw-play ${pkgs."sound-theme-freedesktop"}/share/sounds/freedesktop/stereo/dialog-warning.oga || true
+      pw-play ${pkgs."sound-theme-freedesktop"}/share/sounds/freedesktop/stereo/bell.oga || true
     '';
   };
   skillNames = lib.attrNames (
