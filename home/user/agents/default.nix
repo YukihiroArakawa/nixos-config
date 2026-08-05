@@ -9,6 +9,13 @@ let
       pw-play ${pkgs."sound-theme-freedesktop"}/share/sounds/freedesktop/stereo/complete.oga || true
     '';
   };
+  codexPermissionNotify = pkgs.writeShellApplication {
+    name = "codex-permission-notify";
+    runtimeInputs = [ pkgs.pipewire ];
+    text = ''
+      pw-play ${pkgs."sound-theme-freedesktop"}/share/sounds/freedesktop/stereo/dialog-warning.oga || true
+    '';
+  };
   skillNames = lib.attrNames (
     lib.filterAttrs (_: type: type == "directory") (builtins.readDir skillsDir)
   );
@@ -39,6 +46,17 @@ in
                 {
                   type = "command";
                   command = "${codexNotify}/bin/codex-notify";
+                  timeout = 3;
+                }
+              ];
+            }
+          ];
+          PermissionRequest = [
+            {
+              hooks = [
+                {
+                  type = "command";
+                  command = "${codexPermissionNotify}/bin/codex-permission-notify";
                   timeout = 3;
                 }
               ];
