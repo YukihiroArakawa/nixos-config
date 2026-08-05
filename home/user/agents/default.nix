@@ -2,6 +2,13 @@
 
 let
   skillsDir = ./skills;
+  codexNotify = pkgs.writeShellApplication {
+    name = "codex-notify";
+    runtimeInputs = [ pkgs.pipewire ];
+    text = ''
+      pw-play ${pkgs."sound-theme-freedesktop"}/share/sounds/freedesktop/stereo/complete.oga || true
+    '';
+  };
   skillNames = lib.attrNames (
     lib.filterAttrs (_: type: type == "directory") (builtins.readDir skillsDir)
   );
@@ -19,5 +26,36 @@ in
     pkgs.codex
   ];
 
-  home.file = skillFiles "codex" // skillFiles "claude";
+  home.file =
+    skillFiles "codex"
+    // skillFiles "claude"
+    // {
+      ".codex/hooks.json".text = builtins.toJSON {
+        description = "Play a sound when Codex needs attention.";
+        hooks = {
+          Stop = [
+            {
+              hooks = [
+                {
+                  type = "command";
+                  command = "${codexNotify}/bin/codex-notify";
+                  timeout = 3;
+                }
+              ];
+            }
+          ];
+          SubagentStop = [
+            {
+              hooks = [
+                {
+                  type = "command";
+                  command = "${codexNotify}/bin/codex-notify";
+                  timeout = 3;
+                }
+              ];
+            }
+          ];
+        };
+      };
+    };
 }
