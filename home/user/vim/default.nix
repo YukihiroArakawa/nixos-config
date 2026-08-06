@@ -19,9 +19,8 @@
       lua-language-server
       nil
       nodejs
-      csharp-ls
       dotnet-sdk_10
-      ripgrep
+      roslyn-ls
       # Keep language servers on PATH so Neovim can use them without an extra installer layer.
       svelte-language-server
       stylua

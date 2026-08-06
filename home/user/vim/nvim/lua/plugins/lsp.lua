@@ -38,7 +38,7 @@ return {
         capabilities = capabilities,
       })
 
-      vim.lsp.config("csharp_ls", {
+      vim.lsp.config("roslyn_ls", {
         capabilities = capabilities,
         root_dir = function(bufnr, on_dir)
           local filename = vim.api.nvim_buf_get_name(bufnr)
@@ -51,7 +51,8 @@ return {
 
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("svelte")
-      vim.lsp.enable("csharp_ls")
+      vim.lsp.enable("csharp_ls", false)
+      vim.lsp.enable("roslyn_ls")
     end,
   },
   {
