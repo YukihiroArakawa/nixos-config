@@ -4,6 +4,17 @@ local function project_root()
   return vim.fs.root(start, { ".git" }) or vim.uv.cwd()
 end
 
+local function toggle_terminal()
+  local closing = vim.bo.buftype == "terminal"
+  Snacks.terminal(nil, { cwd = project_root() })
+
+  if closing then
+    vim.schedule(function()
+      vim.cmd("checktime")
+    end)
+  end
+end
+
 return {
   {
     "folke/snacks.nvim",
@@ -58,17 +69,13 @@ return {
       },
       {
         "<C-/>",
-        function()
-          Snacks.terminal(nil, { cwd = project_root() })
-        end,
+        toggle_terminal,
         desc = "Toggle Terminal",
         mode = { "n", "t" },
       },
       {
         "<C-_>",
-        function()
-          Snacks.terminal(nil, { cwd = project_root() })
-        end,
+        toggle_terminal,
         desc = "which_key_ignore",
         mode = { "n", "t" },
       },
