@@ -138,11 +138,32 @@ return {
       local treesitter = require("nvim-treesitter")
       treesitter.setup()
       -- Install frontend parsers explicitly so syntax and indent stay aligned with the new LSP targets.
-      treesitter.install({ "lua", "nix", "javascript", "typescript", "tsx", "html", "css", "svelte" })
+      treesitter.install({
+        "lua",
+        "nix",
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
+        "css",
+        "svelte",
+        "markdown",
+        "markdown_inline",
+      })
 
       -- nvim-treesitter main uses Neovim's built-in highlighter API instead of the old configs module.
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "lua", "nix", "javascript", "typescript", "tsx", "html", "css", "svelte" },
+        pattern = {
+          "lua",
+          "nix",
+          "javascript",
+          "typescript",
+          "tsx",
+          "html",
+          "css",
+          "svelte",
+          "markdown",
+        },
         callback = function()
           pcall(vim.treesitter.start)
           vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
