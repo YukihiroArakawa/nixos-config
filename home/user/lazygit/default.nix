@@ -8,12 +8,12 @@ let
       git
     ];
     text = ''
-      repo="$(git rev-parse --show-toplevel)"
-      cd "$repo"
+            repo="$(git rev-parse --show-toplevel)"
+            cd "$repo"
 
-      codex --ask-for-approval never --model gpt-5.4-mini exec -C "$repo" "\$commit
+            codex --ask-for-approval never --model gpt-5.4-mini exec -C "$repo" "\$commit
 
-Commit only the currently staged changes. If nothing is staged, inspect the worktree and ask before staging anything."
+      Commit only the currently staged changes. If nothing is staged, inspect the worktree and ask before staging anything."
     '';
   };
 in

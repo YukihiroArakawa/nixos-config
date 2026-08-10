@@ -2,13 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true; # comment out this
@@ -24,7 +29,10 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -45,8 +53,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-     font = "Lat2-Terminus16";
-     useXkbConfig = true; # use xkb.options in tty.
+    font = "Lat2-Terminus16";
+    useXkbConfig = true; # use xkb.options in tty.
   };
 
   # Japanese Input Setting
@@ -54,8 +62,8 @@
     enable = true;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk
+      fcitx5-mozc
+      fcitx5-gtk
     ];
     fcitx5.settings.globalOptions = {
       "Hotkey/TriggerKeys"."0" = "Alt+space";
@@ -70,7 +78,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  
+
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "ctrl:nocaps";
@@ -80,8 +88,8 @@
     {
       settings = {
         "org/gnome/desktop/input-sources" = {
-           xkb-options = [ "ctrl:nocaps" ];
-         };
+          xkb-options = [ "ctrl:nocaps" ];
+        };
       };
     }
   ];
@@ -108,24 +116,30 @@
   users.users.yukihiro = {
     isNormalUser = true;
     description = "Yukihiro Arakawa";
-    extraGroups = [ "networkmanager" "plugdev" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "networkmanager"
+      "plugdev"
+      "wheel"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     # packages = with pkgs; [
     #  tree
     # ];
   };
 
-  users.groups.plugdev = {};
+  users.groups.plugdev = { };
 
   # programs.firefox.enable = true;
 
   programs.fish.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-  #   wget
-     git
+    #   wget
+    git
+    slack
   ];
 
   environment.shellAliases = {

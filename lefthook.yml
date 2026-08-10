@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    nixfmt:
+      glob: "*.nix"
+      exclude: "hosts/nixos/hardware-configuration.nix"
+      run: nixfmt --check {staged_files}

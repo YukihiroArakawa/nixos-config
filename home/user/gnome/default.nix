@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -20,9 +25,9 @@
     # Use Super+number for workspace switching.
     "org/gnome/desktop/wm/keybindings" = {
       # Let fcitx5 handle input method switching instead of GNOME.
-      switch-input-source = [];
-      switch-input-source-backward = [];
-      activate-window-menu = [];
+      switch-input-source = [ ];
+      switch-input-source-backward = [ ];
+      activate-window-menu = [ ];
 
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
@@ -33,12 +38,15 @@
 
     # Free Super+number from GNOME Shell's favorite application shortcuts.
     "org/gnome/shell/keybindings" = {
-      switch-to-application-1 = [];
-      switch-to-application-2 = [];
-      switch-to-application-3 = [];
-      switch-to-application-4 = [];
-      switch-to-application-5 = [];
-      toggle-overview = [ "<Control>Up" "<Control>Down" ];
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+      switch-to-application-5 = [ ];
+      toggle-overview = [
+        "<Control>Up"
+        "<Control>Down"
+      ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
