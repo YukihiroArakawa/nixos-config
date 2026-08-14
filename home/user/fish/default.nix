@@ -4,6 +4,7 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
+      nrp = "nix run nixpkgs#";
       nrs = "sudo nixos-rebuild switch --flake .#nixos";
       # Run after changing home/user; system-level changes still need nrs.
       hms = "home-manager switch --flake .#yukihiro";
