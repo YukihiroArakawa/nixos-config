@@ -32,7 +32,7 @@ require("lazy").setup({
     version = false,
   },
   install = {
-    colorscheme = { "tokyonight", "habamax" },
+    colorscheme = { "kanagawa-wave", "habamax" },
   },
   checker = {
     enabled = true,
