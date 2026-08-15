@@ -3,6 +3,13 @@
 {
   programs.fish = {
     enable = true;
+    functions.cghq = {
+      description = "Change directory to a ghq repository";
+      body = ''
+        set -l repository (ghq list --full-path | fzf --prompt="Repository> ")
+        test -n "$repository"; and cd "$repository"
+      '';
+    };
     shellAbbrs = {
       nrp = "nix run nixpkgs#";
       nrs = "sudo nixos-rebuild switch --flake .#nixos";
@@ -18,6 +25,11 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.direnv = {
