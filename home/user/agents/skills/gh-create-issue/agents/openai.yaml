@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create GitHub Issue"
+  short_description: "Create an issue from the repository template"
+  default_prompt: "Use $gh-create-issue to create a GitHub issue from this repository template."
