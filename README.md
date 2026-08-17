@@ -26,13 +26,26 @@ $ sudo nixos-rebuild switch --flake .#nixos
 
 ### 3. Initialize Home Manager.
 
-Run this once as `yukihiro` to apply the user configuration and install the
-`home-manager` command.
+Configure the SSH key used for GitHub before applying the Home Manager
+configuration. Verify that GitHub authentication succeeds:
+
+```terminal
+$ ssh -T git@github.com
+```
+
+Then run the following once as `yukihiro` to apply the user configuration and
+install the `home-manager` command:
 
 ```terminal
 $ nix build .#homeConfigurations.yukihiro.activationPackage --out-link /tmp/home-manager-yukihiro
 $ /tmp/home-manager-yukihiro/activate
 ```
+
+Home Manager uses `ghq` to clone any missing repositories declared in
+`home/user/ghq/default.nix`. Private repositories require working GitHub SSH
+authentication when Home Manager is activated. Existing repositories are left
+unchanged, and removing an entry from the configuration does not delete its
+local checkout.
 
 ## Updating configuration
 

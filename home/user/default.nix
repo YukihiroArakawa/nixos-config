@@ -6,6 +6,7 @@
     ./browser
     ./agents
     ./fish
+    ./ghq
     ./git
     ./gnome
     ./lazygit
