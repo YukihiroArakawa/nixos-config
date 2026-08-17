@@ -32,6 +32,14 @@ let
 in
 {
   home.activation.cloneGhqRepositories = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    # The new Home Manager profile is not on PATH yet, but ghq needs git and SSH to clone repositories.
+    export PATH="${
+      lib.makeBinPath [
+        pkgs.git
+        pkgs.openssh
+      ]
+    }:$PATH"
+
     ${lib.concatMapStringsSep "\n" (repository: ''
       repositoryPath=${lib.escapeShellArg "${ghqRoot}/${repository.path}"}
 
