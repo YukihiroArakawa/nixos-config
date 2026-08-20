@@ -3,6 +3,7 @@
 let
   userDictionary = pkgs.writeText "mozc-user-dictionary.tsv" ''
     ゆきひろ	幸寛	名詞	人名
+    じゆ	事由	名詞
   '';
 
   mozcUserDictionaryTool = pkgs.writeShellApplication {
