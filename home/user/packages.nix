@@ -13,5 +13,6 @@
     tree
     ulauncher
     vial
+    ccusage
   ];
 }
