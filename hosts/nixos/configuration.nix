@@ -66,7 +66,10 @@
       fcitx5-gtk
     ];
     fcitx5.settings.globalOptions = {
-      "Hotkey/TriggerKeys"."0" = "Alt+space";
+      "Hotkey/TriggerKeys" = {
+        "0" = "Alt_L";
+        "1" = "Alt+space";
+      };
       "Hotkey/ActivateKeys"."0" = "Super_R";
       "Hotkey/DeactivateKeys"."0" = "Super_L";
     };
