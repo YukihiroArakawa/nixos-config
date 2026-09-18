@@ -58,7 +58,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ulauncher" = {
       name = "Ulauncher";
       command = "${pkgs.ulauncher}/bin/ulauncher-toggle";
-      binding = "<Super>space";
+      binding = "<Alt>space";
     };
 
     # Keep a stable set of numbered workspaces.
