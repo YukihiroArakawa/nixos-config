@@ -1,6 +1,5 @@
 [terminal.shell]
-program = "bash"
-args = ["-lc", "exec \"${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux_setup.sh\""]
+program = "herdr"
 
 [window]
 decorations = "None"

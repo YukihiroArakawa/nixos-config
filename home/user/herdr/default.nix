@@ -10,6 +10,8 @@
       name = "kanagawa"
 
       [keys]
+      prefix = "ctrl+g"
+      rename_tab = "prefix+comma"
       settings = "prefix+shift+s"
       split_vertical = "prefix+v"
       split_horizontal = "prefix+s"
