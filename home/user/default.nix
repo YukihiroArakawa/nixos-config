@@ -9,6 +9,7 @@
     ./ghq
     ./git
     ./gnome
+    ./herdr
     ./lazygit
     ./mozc
     ./packages.nix
