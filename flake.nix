@@ -8,10 +8,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    herdr-nix.url = "github:herdrdev/herdr-nix";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      herdr-nix,
+      ...
+    }:
     let
       system = "x86_64-linux";
     in
@@ -34,6 +41,7 @@
 
       homeConfigurations.yukihiro = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = { inherit herdr-nix; };
         modules = [ ./home/user ];
       };
 

@@ -1,9 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  herdr-nix,
+  ...
+}:
 
 {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    herdr-nix.packages.${stdenv.hostPlatform.system}.default
     ghq
     lazygit
     lefthook
