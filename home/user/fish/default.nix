@@ -3,7 +3,7 @@
 {
   programs.fish = {
     enable = true;
-    functions.cghq = {
+    functions.ghqc = {
       description = "Change directory to a ghq repository";
       body = ''
         set -l repository (ghq list --full-path | fzf --prompt="Repository> ")
