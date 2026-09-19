@@ -15,6 +15,8 @@
       settings = "prefix+shift+s"
       split_vertical = "prefix+v"
       split_horizontal = "prefix+s"
+      navigate_workspace_down = "j"
+      navigate_workspace_up = "k"
 
       [ui.toast]
       delivery = "terminal"
