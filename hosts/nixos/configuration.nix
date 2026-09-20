@@ -132,6 +132,7 @@
   # programs.firefox.enable = true;
 
   programs.fish.enable = true;
+  programs.gpaste.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile.

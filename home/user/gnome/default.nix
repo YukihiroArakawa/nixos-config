@@ -90,4 +90,13 @@
 
   xdg.configFile."autostart/ulauncher.desktop".source =
     "${pkgs.ulauncher}/share/applications/ulauncher.desktop";
+
+  xdg.desktopEntries.clipboard-history = {
+    name = "cb — Clipboard History";
+    comment = "Open GPaste clipboard history";
+    exec = "gpaste-client ui";
+    icon = "edit-paste";
+    terminal = false;
+    categories = [ "Utility" ];
+  };
 }
