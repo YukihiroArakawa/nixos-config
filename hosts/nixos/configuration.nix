@@ -67,8 +67,6 @@
     ];
     fcitx5.settings.globalOptions = {
       "Hotkey/TriggerKeys"."0" = "Alt_L";
-      "Hotkey/ActivateKeys"."0" = "Super_R";
-      "Hotkey/DeactivateKeys"."0" = "Super_L";
     };
   };
 
